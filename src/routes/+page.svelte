@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Sidebar from '../components/Sidebar/index.svelte';
+</script>
+
+<div class="bg-zinc-900 w-screen h-screen text-white">
+	<Sidebar />
+</div>
