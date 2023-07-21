@@ -15,13 +15,13 @@
 
 {#each menuOptions as option}
 	<button
-		class="flex flex-row py-4 pl-2 items-center cursor-pointer hover:bg-zinc-700 overflow-hidden"
+		class="flex cursor-pointer flex-row items-center overflow-hidden rounded-md px-7 py-4 hover:bg-zinc-700"
 		on:click={() => selectChatType(option.type)}
 	>
 		<div class="mr-4">
 			<svelte:component this={option.icon} />
 		</div>
-		<div class="line-clamp-1">
+		<div class="line-clamp-1 text-sm">
 			<h1 class="w-fit">{option.label}</h1>
 		</div>
 	</button>

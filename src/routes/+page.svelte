@@ -5,7 +5,7 @@
 	import { chatType, ChatType } from '../stores/ui/chatType';
 </script>
 
-<div class="flex h-screen w-screen flex-row bg-zinc-900 text-white">
+<div class="flex h-screen w-screen flex-row bg-zinc-900 pt-12 text-white">
 	<Sidebar />
 
 	{#if $chatType === null}
