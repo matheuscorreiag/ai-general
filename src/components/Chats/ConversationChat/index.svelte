@@ -25,7 +25,9 @@
 		</form>
 	</div>
 
-	<div class="mt-10 h-4/6 flex-col space-y-12 overflow-y-scroll rounded-lg bg-zinc-800 p-10">
+	<div
+		class="mt-10 h-4/6 flex-col space-y-12 overflow-y-scroll rounded-lg bg-zinc-800 p-10 scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-900 scrollbar-thumb-rounded"
+	>
 		{#each $messages as message}
 			<Message message={message.content} userType={message.role} />
 		{/each}
