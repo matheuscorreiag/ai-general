@@ -11,7 +11,7 @@
 <button
 	class={twMerge(
 		'absolute right-4 top-4 cursor-pointer',
-		!$sidebarOpen && 'right-0 w-full flex justify-center'
+		!$sidebarOpen && 'right-0 flex w-full justify-center'
 	)}
 	on:click={toggleSidebar}
 >

@@ -7,14 +7,14 @@
 
 <div
 	class={twMerge(
-		'border-r border-r-zinc-600 h-screen relative ease-in-out duration-500',
+		'relative h-screen border-r border-r-zinc-600 duration-500 ease-in-out',
 		$sidebarOpen && 'w-72',
 		!$sidebarOpen && 'w-10'
 	)}
 >
 	<ToggleButton />
 
-	<div class="h-full flex flex-col py-12">
+	<div class="flex h-full flex-col py-12">
 		<SidebarMenuItems />
 	</div>
 </div>
