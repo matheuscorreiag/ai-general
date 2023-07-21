@@ -18,12 +18,6 @@
 			{#if $chatType === ChatType.Conversation}
 				<ConversationChat />
 			{/if}
-			<!-- {#if $chatType === ChatType.Conversation}
-				<ConversationChat />
-			{/if}
-			{#if $chatType === ChatType.Conversation}
-				<ConversationChat />
-			{/if} -->
 		</div>
 	{/if}
 </div>

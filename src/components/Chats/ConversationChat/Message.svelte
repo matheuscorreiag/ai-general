@@ -1,31 +1,29 @@
 <script lang="ts">
-	import { Home } from 'lucide-svelte';
+	import { Computer, Home, User } from 'lucide-svelte';
 
-	export let userType: 'AI' | 'USER' = 'USER';
+	export let userType: 'function' | 'user' | 'assistant' | 'system';
+	export let message: string;
 </script>
 
-{#if userType === 'USER'}
+{#if userType === 'user'}
 	<div class="flex items-end justify-end">
-		<div class="flex w-fit flex-row rounded-full p-2">
+		<div class="flex flex-row rounded-full p-2">
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum at cupiditate ullam aperiam
-				iste quas vitae atque eveniet facere? Blanditiis, sit illo eius vitae inventore ex veniam
-				numquam libero tempore?
+				{message}
 			</p>
-			<div class="mr-6 flex w-fit rounded-full">
-				<Home />
+			<div class="ml-6 flex items-center justify-center rounded-full bg-zinc-900 p-2">
+				<User />
 			</div>
 		</div>
 	</div>
 {:else}
 	<div class="flex flex-row">
-		<div class="mr-6 flex w-fit rounded-full">
-			<Home />
+		<div class="mr-6 flex items-center justify-center rounded-full bg-zinc-900">
+			<Computer />
 		</div>
+
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum at cupiditate ullam aperiam
-			iste quas vitae atque eveniet facere? Blanditiis, sit illo eius vitae inventore ex veniam
-			numquam libero tempore?
+			{message}
 		</p>
 	</div>
 {/if}
