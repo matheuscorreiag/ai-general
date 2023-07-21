@@ -11,6 +11,9 @@ dependencies:
   lucide-svelte:
     specifier: ^0.262.0
     version: 0.262.0(svelte@4.1.0)
+  openai-edge:
+    specifier: ^1.2.1
+    version: 1.2.1
   prettier-plugin-tailwindcss:
     specifier: ^0.4.1
     version: 0.4.1(prettier-plugin-svelte@2.10.1)(prettier@2.8.8)
@@ -1687,6 +1690,11 @@ packages:
     dependencies:
       wrappy: 1.0.2
     dev: true
+
+  /openai-edge@1.2.1:
+    resolution: {integrity: sha512-3PycifhW/MR3poGhvthYppbZ5M/q2R/Vkv+JE6AjaeZ5jZvE0RClRLsolte/7TG45lrm/g6RRE1WXQjdK21ZhA==}
+    engines: {node: '>=18'}
+    dev: false
 
   /optionator@0.9.3:
     resolution: {integrity: sha512-JjCoypp+jKn1ttEFExxhetCKeJt9zhAgAve5FXHixTvFDW/5aEktX9bufBKLRRMdU7bNtpLfcGu94B3cdEJgjg==}
