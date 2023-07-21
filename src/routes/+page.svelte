@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Sidebar from '../components/Sidebar/index.svelte';
 	import ConversationChat from '../components/Chats/ConversationChat/index.svelte';
+	import ImageChat from '../components/Chats/ImageChat/index.svelte';
 
 	import { chatType, ChatType } from '../stores/ui/chatType';
 </script>
@@ -17,6 +18,9 @@
 		<div class="flex w-full flex-col px-12">
 			{#if $chatType === ChatType.Conversation}
 				<ConversationChat />
+			{/if}
+			{#if $chatType === ChatType.Image}
+				<ImageChat />
 			{/if}
 		</div>
 	{/if}
