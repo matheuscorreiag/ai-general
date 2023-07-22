@@ -15,7 +15,7 @@
 			Please select the type of AI you want to use.
 		</div>
 	{:else}
-		<div class="flex w-full flex-col px-12">
+		<div class="flex w-full flex-col px-6 sm:px-12">
 			{#if $chatType === ChatType.Conversation}
 				<ConversationChat />
 			{/if}

@@ -7,7 +7,7 @@
 
 <div
 	class={twMerge(
-		'relative mx-4 rounded-md bg-zinc-800 shadow-lg duration-500 ease-in-out',
+		'relative mx-4 mb-10 rounded-md bg-zinc-800 shadow-lg duration-500 ease-in-out sm:mb-0',
 		$sidebarOpen && 'h-auto sm:w-60',
 		!$sidebarOpen && 'h-14 overflow-hidden sm:h-auto sm:w-20'
 	)}

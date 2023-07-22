@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Home, Sun, Star } from 'lucide-svelte';
 	import { ChatType, chatType } from '../../stores/ui/chatType';
+	import { sidebarOpen } from '../../stores/ui/sidebar';
 
 	export const menuOptions = [
 		{ label: 'ConversationAI', icon: Home, type: ChatType.Conversation },
@@ -9,6 +10,10 @@
 	];
 
 	function selectChatType(type: ChatType) {
+		if (type !== $chatType) {
+			sidebarOpen.update(() => false);
+		}
+
 		chatType.update(() => type);
 	}
 </script>

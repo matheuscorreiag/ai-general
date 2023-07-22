@@ -4,7 +4,6 @@
 	import Title from './Title.svelte';
 
 	const { input, handleSubmit, messages } = useChat();
-	console.log($messages);
 
 	import { Send } from 'lucide-svelte';
 </script>
@@ -26,7 +25,7 @@
 	</div>
 
 	<div
-		class="mt-10 h-4/6 flex-col space-y-12 overflow-y-scroll rounded-lg bg-zinc-800 p-10 scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-900 scrollbar-thumb-rounded"
+		class="scrollbar-thumb-rounded mt-10 h-4/6 flex-col space-y-12 overflow-y-scroll rounded-lg bg-zinc-800 p-10 scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-900"
 	>
 		{#each $messages as message}
 			<Message message={message.content} userType={message.role} />
