@@ -15,7 +15,7 @@
 
 {#each menuOptions as option}
 	<button
-		class="flex cursor-pointer flex-row items-center overflow-hidden rounded-md px-7 py-4 hover:bg-zinc-700"
+		class="flex cursor-pointer flex-row items-center overflow-hidden rounded-md px-6 py-5 hover:bg-zinc-700"
 		on:click={() => selectChatType(option.type)}
 	>
 		<div class="mr-4">

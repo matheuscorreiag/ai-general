@@ -6,11 +6,11 @@
 	import { chatType, ChatType } from '../stores/ui/chatType';
 </script>
 
-<div class="flex h-screen w-screen flex-row bg-zinc-900 pt-12 text-white">
+<div class="flex h-screen w-screen flex-col bg-zinc-900 pb-10 pt-12 text-white sm:flex-row">
 	<Sidebar />
 
 	{#if $chatType === null}
-		<div class="flex w-full items-center justify-center text-center text-3xl">
+		<div class="flex h-full w-full items-center justify-center text-center text-3xl">
 			This is your AI Centered tool. <br />
 			Please select the type of AI you want to use.
 		</div>

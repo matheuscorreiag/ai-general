@@ -8,19 +8,19 @@
 	}
 </script>
 
-<button
-	class={twMerge(
-		'absolute right-4 top-4 cursor-pointer',
-		!$sidebarOpen && 'right-0 flex w-full justify-center'
-	)}
-	on:click={toggleSidebar}
->
-	<ChevronLeft
+<button on:click={toggleSidebar}>
+	<div
 		class={twMerge(
-			'transition-transform',
-			$sidebarOpen && 'rotate-0',
-			!$sidebarOpen && 'rotate-180'
+			'absolute right-4 top-4',
+			!$sidebarOpen && 'sm:right-0 sm:flex sm:w-full sm:items-center sm:justify-center'
 		)}
-		font-weight="bold"
-	/>
+	>
+		<ChevronLeft
+			font-weight="bold"
+			class={twMerge(
+				'-rotate-90 text-center duration-200 ease-in-out sm:-rotate-180',
+				$sidebarOpen && 'rotate-90 sm:-rotate-0'
+			)}
+		/>
+	</div>
 </button>
