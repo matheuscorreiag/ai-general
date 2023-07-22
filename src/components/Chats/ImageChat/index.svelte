@@ -7,6 +7,7 @@
 	let images: { url: string }[] = [];
 
 	async function submit() {
+		if (isLoading) return;
 		isLoading = true;
 		const response = await fetch('https://api.openai.com/v1/images/generations', {
 			method: 'POST',
@@ -22,23 +23,23 @@
 		}).then((response) => response.json());
 
 		isLoading = false;
+		inputValue = '';
 
 		images = response.data;
 	}
 </script>
 
 <Title />
-
-<div class="relative">
+<form on:submit|preventDefault={submit} class="relative">
 	<input
 		class="h-12 w-full rounded-lg bg-zinc-800 px-4 outline-none transition-all duration-300 focus:ring-2"
 		bind:value={inputValue}
 	/>
 
-	<button class="group absolute right-5 top-4 cursor-pointer" type="submit" on:click={submit}>
+	<button class="group absolute right-5 top-4 cursor-pointer" type="submit">
 		<Send size={18} class="transition-opacity duration-200 group-hover:opacity-60" />
 	</button>
-</div>
+</form>
 
 {#if isLoading}
 	<div class="mt-12 flex w-full animate-pulse items-center justify-center">
@@ -47,7 +48,7 @@
 {:else}
 	<div class="mt-12 grid grid-cols-3 gap-x-4">
 		{#each images as image}
-			<img src={image.url} alt="an image" />
+			<img src={image.url} alt="generated ai input" />
 		{/each}
 	</div>
 {/if}
