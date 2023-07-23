@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Computer, Home, User } from 'lucide-svelte';
+	import { Computer, User } from 'lucide-svelte';
 	import { twMerge } from 'tailwind-merge';
 
 	export let userType: 'function' | 'user' | 'assistant' | 'system';

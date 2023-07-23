@@ -9,17 +9,27 @@
 	async function submit() {
 		if (isLoading) return;
 		isLoading = true;
-		const response = await fetch('https://api.openai.com/v1/images/generations', {
+		// const response = await fetch('https://api.openai.com/v1/images/generations', {
+		// 	method: 'POST',
+		// 	headers: {
+		// 		Authorization: `Bearer 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`,
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 	body: JSON.stringify({
+		// 		prompt: inputValue,
+		// 		n: 3,
+		// 		size: '1024x1024'
+		// 	})
+		// }).then((response) => response.json());
+
+		const response = await fetch('/api/image', {
 			method: 'POST',
-			headers: {
-				Authorization: `Bearer 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`,
-				'Content-Type': 'application/json'
-			},
 			body: JSON.stringify({
-				prompt: inputValue,
-				n: 3,
-				size: '1024x1024'
-			})
+				prompt: inputValue
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
 		}).then((response) => response.json());
 
 		isLoading = false;
@@ -46,9 +56,9 @@
 		Generating images...
 	</div>
 {:else}
-	<div class="mt-12 grid grid-cols-3 gap-x-4">
+	<div class="mt-12 grid grid-cols-1 place-items-center gap-x-4 gap-y-4 lg:grid-cols-3">
 		{#each images as image}
-			<img src={image.url} alt="generated ai input" />
+			<img src={image.url} alt="generated ai input" class="h-[300px] w-[300px]" />
 		{/each}
 	</div>
 {/if}

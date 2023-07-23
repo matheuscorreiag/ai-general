@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Home, Sun, Star } from 'lucide-svelte';
+	import { Image, Star, MessagesSquare, Settings } from 'lucide-svelte';
 	import { ChatType, chatType } from '../../stores/ui/chatType';
 	import { sidebarOpen } from '../../stores/ui/sidebar';
 
 	export const menuOptions = [
-		{ label: 'ConversationAI', icon: Home, type: ChatType.Conversation },
-		{ label: 'ImageAI', icon: Sun, type: ChatType.Image },
+		{ label: 'ConversationAI', icon: MessagesSquare, type: ChatType.Conversation },
+		{ label: 'ImageAI', icon: Image, type: ChatType.Image },
 		{ label: 'SongAI', icon: Star, type: ChatType.Song }
 	];
 

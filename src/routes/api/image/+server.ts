@@ -1,18 +1,23 @@
+import { json } from '@sveltejs/kit';
+import { env } from '$env/dynamic/private';
+
 export const POST = async ({ request }) => {
-	const { body } = request;
+	const body = await request.json();
+
+	console.log('body: ', body);
+
 	const response = await fetch('https://api.openai.com/v1/images/generations', {
 		method: 'POST',
 		headers: {
-			Authorization: `Bearer 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`,
+			Authorization: `Bearer ${env.OPENAI_API_KEY}`,
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
-			prompt: 'A horse',
-			n: 1,
-			size: '1024x1024'
+			prompt: body.prompt,
+			n: 3,
+			size: '512x512'
 		})
-	});
+	}).then((response) => response.json());
 
-	return await response.json();
-	console.log(response);
+	return json(response);
 };

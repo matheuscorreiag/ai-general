@@ -8,8 +8,8 @@
 <div
 	class={twMerge(
 		'relative mx-4 mb-10 rounded-md bg-zinc-800 shadow-lg duration-500 ease-in-out sm:mb-0',
-		$sidebarOpen && 'h-auto sm:w-60',
-		!$sidebarOpen && 'h-14 overflow-hidden sm:h-auto sm:w-20'
+		$sidebarOpen && 'h-72 sm:h-auto sm:w-60',
+		!$sidebarOpen && 'min-h-[60px]  overflow-hidden sm:h-auto sm:w-20'
 	)}
 >
 	<div class="flex w-full flex-col pt-4">
