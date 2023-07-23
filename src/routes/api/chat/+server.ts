@@ -32,6 +32,5 @@ export const POST = (async ({ request }) => {
 	const stream = OpenAIStream(response);
 	// Respond with the stream
 
-	console.log(stream);
 	return new StreamingTextResponse(stream);
 }) satisfies RequestHandler;

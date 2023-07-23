@@ -4,8 +4,6 @@ import { env } from '$env/dynamic/private';
 export const POST = async ({ request }) => {
 	const body = await request.json();
 
-	console.log('body: ', body);
-
 	const response = await fetch('https://api.openai.com/v1/images/generations', {
 		method: 'POST',
 		headers: {
