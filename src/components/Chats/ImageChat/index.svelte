@@ -9,18 +9,6 @@
 	async function submit() {
 		if (isLoading) return;
 		isLoading = true;
-		// const response = await fetch('https://api.openai.com/v1/images/generations', {
-		// 	method: 'POST',
-		// 	headers: {
-		// 		Authorization: `Bearer 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`,
-		// 		'Content-Type': 'application/json'
-		// 	},
-		// 	body: JSON.stringify({
-		// 		prompt: inputValue,
-		// 		n: 3,
-		// 		size: '1024x1024'
-		// 	})
-		// }).then((response) => response.json());
 
 		const response = await fetch('/api/image', {
 			method: 'POST',

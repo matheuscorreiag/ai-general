@@ -2,6 +2,7 @@
 	import Sidebar from '../components/Sidebar/index.svelte';
 	import ConversationChat from '../components/Chats/ConversationChat/index.svelte';
 	import ImageChat from '../components/Chats/ImageChat/index.svelte';
+	import SongChat from '../components/Chats/SongChat/index.svelte';
 
 	import { chatType, ChatType } from '../stores/ui/chatType';
 </script>
@@ -21,6 +22,9 @@
 			{/if}
 			{#if $chatType === ChatType.Image}
 				<ImageChat />
+			{/if}
+			{#if $chatType === ChatType.Song}
+				<SongChat />
 			{/if}
 		</div>
 	{/if}
